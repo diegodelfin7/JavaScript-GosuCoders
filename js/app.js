@@ -40,5 +40,22 @@ function crearVectorTabla(m,n){
 }
 
 
+function crearTabla(){
 
-generarTabla(3,3);
+	var tabla = '<table border="1">';
+	var tr ='';
+
+	for(var i=0; i<3 ; i++){
+		 tr += '<tr>';
+		for(var j=0; j<3 ;j++){
+         	tr += '<td>'+i+'</td>';
+     	}
+     tr += '</tr>';
+	}
+
+	tabla += tr;
+	tabla += '</table>';
+
+	$("#lista").html(tabla);
+}
+
