@@ -10,6 +10,64 @@
 	</style>
 </head>
 <body>
+	<div id ="lista"></div>
+	<script type="text/javascript">
+
+		function crearArray(m,n){
+
+			var vector=[];
+			var cantidad = m*n;
+
+			for(var i=0 ; i < cantidad ; i++){
+				vector[i] = i+1;
+			}
+
+			vector = shuffle(vector);
+			vector = vector_conx(vector);
+
+			return vector;
+		}
+
+		function vector_conx(array){
+
+			var mayor = -1,j;
+			var count = array.length;
+			for (var i = 0; i < count; i++) {
+				if (array[i] > mayor) {
+					j=i;
+					mayor = array[i];
+				}
+			}
+			console.log('mayor de numeros',mayor);
+			array[j]= "X";
+			return array;
+		}
+
+		function shuffle(array){
+
+			 var currentIndex = array.length, temporaryValue, randomIndex ;
+
+			  // While there remain elements to shuffle...
+			  while (0 !== currentIndex) {
+
+			    // Pick a remaining element...
+			    randomIndex = Math.floor(Math.random() * currentIndex);
+			    currentIndex -= 1;
+
+			    // And swap it with the current element.
+			    temporaryValue = array[currentIndex];
+			    array[currentIndex] = array[randomIndex];
+			    array[randomIndex] = temporaryValue;
+			  }
+
+		  return array;
+		}
+
+		var V =[];
+		V = crearArray(3,3);
+		console.log('Vector X : ',V);
+
+	</script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
